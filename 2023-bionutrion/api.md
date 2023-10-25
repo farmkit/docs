@@ -41,7 +41,7 @@ curl -X 'POST' \
 ### response
 |변수명|설명|
 |:-|:-|
-company|API 제공 회사
+company|음식인식 API 제공 회사
 code|API 호출 결과 코드
 message|API 호출 결과 메시지
 foodRecognitions|API 호출 결과(인식 음식, 위치, 영양정보 등)
@@ -549,7 +549,7 @@ data|API 호출 결과
 data 변수
 |변수명|설명|
 |:-|:-|
-bodyInfo|ERR 계산값
+bodyInfo|EER 계산값
 recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 등)
 
 ~~~
