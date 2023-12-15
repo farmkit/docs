@@ -12,7 +12,7 @@ base url: https://bionutrion.foodq.kr
 ### request 
 URL : 
 ~~~
-https://https://bionutrion.foodq.kr/api/foodimg/recognize
+https://bionutrion.foodq.kr/api/foodimg/recognize
 ~~~
 
 |변수명|설명|
