@@ -4,7 +4,7 @@
 
 Base EndPoint URL : 
 ~~~
-base url: https://bionutrion.azurewebsites.net 
+base url: https://bionutrion.foodq.kr
 ~~~
 
 ## 음식인식
@@ -12,7 +12,7 @@ base url: https://bionutrion.azurewebsites.net
 ### request 
 URL : 
 ~~~
-https://bionutrion.azurewebsites.net/api/foodimg/recognize
+https://https://bionutrion.foodq.kr/api/foodimg/recognize
 ~~~
 
 |변수명|설명|
@@ -31,7 +31,7 @@ __이미지 파일__
 
 ~~~
 curl -X 'POST' \
-  'https://bionutrion.azurewebsites.net/api/foodimg/recognize' \
+  'https://bionutrion.foodq.kr/api/foodimg/recognize' \
   -H 'accept: */*' \
   -H 'Content-Type: multipart/form-data' \
   -F 'media=@Img_008_0000.jpg;type=image/jpeg' \
@@ -456,7 +456,7 @@ __response sample__
 ### request
 URL : 
 ~~~
-https://bionutrion.azurewebsites.net/api/bionutrion/recomm-get
+https://bionutrion.foodq.kr/api/bionutrion/recomm-get
 ~~~
 
 |변수명|설명|
@@ -480,7 +480,7 @@ foodPreferences|음식별 선호도
 
 ~~~
 curl -X 'POST' \
-  'https://bionutrion.azurewebsites.net/api/bionutrion/recomm-get' \
+  'https://bionutrion.foodq.kr/api/bionutrion/recomm-get' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -552,6 +552,8 @@ data 변수
 bodyInfo|EER 계산값
 recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 등)
 
+recomms 안의 nutritionRation : 일일 권장섭취량에 대한 영양소 비율
+
 ~~~
 {
   "errcode": 200000,
@@ -560,6 +562,38 @@ recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 
       "eer": 2982
     },
     "recomms": [
+      {
+        "name": "죽순쇠고기볶음",
+        "imgLink": "",
+        "calories": 276,
+        "carbohydrate": 8.7,
+        "sugar": 4.8,
+        "protein": 31.5,
+        "fat": 12.9,
+        "saturatedFat": 0.3,
+        "transFat": 4.9,
+        "natrium": 492.5,
+        "cholesterol": 71.24,
+        "dietaryFiber": -1,
+        "allergy": [],
+        "balance": {
+          "carbohydrate": 16.4,
+          "fat": 24.3,
+          "protein": 59.3
+        },
+        "nutritionRatio": {
+          "calories": 9.3,
+          "carbohydrate": 2.3,
+          "sugar": 9.2,
+          "protein": 21.1,
+          "fat": 13,
+          "saturatedFat": 1.3,
+          "transFat": 1.3,
+          "natrium": 21.4,
+          "cholesterol": 23.7,
+          "dietaryFiber": -1
+        }
+      },
       {
         "name": "순두부김치찌개",
         "imgLink": "",
@@ -571,101 +605,251 @@ recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 
         "saturatedFat": 0,
         "transFat": 0.9,
         "natrium": 302.02,
+        "cholesterol": 9.19,
+        "dietaryFiber": -1,
         "allergy": [],
         "balance": {
           "carbohydrate": 31.9,
           "fat": 23.7,
           "protein": 44.4
+        },
+        "nutritionRatio": {
+          "calories": 2.3,
+          "carbohydrate": 1.2,
+          "sugar": 1.1,
+          "protein": 4,
+          "fat": 3.2,
+          "saturatedFat": 0,
+          "transFat": 0,
+          "natrium": 13.1,
+          "cholesterol": 3.1,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "버섯샤브샤브",
-        "imgLink": "",
-        "calories": 105,
-        "carbohydrate": 5.5,
-        "sugar": 1.8,
-        "protein": 13.6,
-        "fat": 3.2,
-        "saturatedFat": 0.1,
-        "transFat": 2.2,
-        "natrium": 177.59,
-        "allergy": [],
-        "balance": {
-          "carbohydrate": 24.7,
-          "fat": 14.3,
-          "protein": 61
-        }
-      },
-      {
-        "name": "브로콜리볶음",
-        "imgLink": "",
-        "calories": 46,
-        "carbohydrate": 5,
-        "sugar": 1.3,
-        "protein": 4,
-        "fat": 1.1,
-        "saturatedFat": 0,
-        "transFat": 0.2,
-        "natrium": 84.88,
-        "allergy": [],
-        "balance": {
-          "carbohydrate": 49.5,
-          "fat": 10.9,
-          "protein": 39.6
-        }
-      },
-      {
-        "name": "버섯구이",
-        "imgLink": "",
-        "calories": 42,
-        "carbohydrate": 3.8,
-        "sugar": 0.1,
-        "protein": 4.1,
-        "fat": 1.1,
-        "saturatedFat": 0,
+        "name": "굽네 소불고기 갈비천왕맛 2입 (냉동), 500g, 1개",
+        "imgLink": "https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2023/04/03/17/0/c3d48a4b-64b7-4b29-94eb-6af01657fc51.jpg",
+        "calories": 408,
+        "carbohydrate": 13,
+        "sugar": 6,
+        "protein": 47,
+        "fat": 17,
+        "saturatedFat": 4.2,
         "transFat": 0.3,
-        "natrium": 393.24,
-        "allergy": [],
+        "natrium": 476,
+        "cholesterol": 69,
+        "dietaryFiber": -1,
+        "allergy": [
+          "소고기",
+          "대두",
+          "밀"
+        ],
         "balance": {
-          "carbohydrate": 42.2,
-          "fat": 12.2,
-          "protein": 45.6
+          "carbohydrate": 16.9,
+          "fat": 22.1,
+          "protein": 61
+        },
+        "nutritionRatio": {
+          "calories": 13.7,
+          "carbohydrate": 3.5,
+          "sugar": 11.5,
+          "protein": 31.5,
+          "fat": 17.1,
+          "saturatedFat": 18.1,
+          "transFat": 18.1,
+          "natrium": 20.7,
+          "cholesterol": 23,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "사골국",
+        "name": "삼치조림",
         "imgLink": "",
-        "calories": 221,
-        "carbohydrate": 11.2,
-        "sugar": 0,
-        "protein": 22.2,
-        "fat": 9.7,
-        "saturatedFat": 0.3,
-        "transFat": 3.8,
-        "natrium": 298.77,
+        "calories": 125,
+        "carbohydrate": 2.6,
+        "sugar": 2,
+        "protein": 15.9,
+        "fat": 5.6,
+        "saturatedFat": 0,
+        "transFat": 1.6,
+        "natrium": 441.01,
+        "cholesterol": 51.41,
+        "dietaryFiber": -1,
         "allergy": [],
         "balance": {
-          "carbohydrate": 26,
-          "fat": 22.5,
-          "protein": 51.5
+          "carbohydrate": 10.8,
+          "fat": 23.2,
+          "protein": 66
+        },
+        "nutritionRatio": {
+          "calories": 4.2,
+          "carbohydrate": 0.7,
+          "sugar": 3.8,
+          "protein": 10.7,
+          "fat": 5.6,
+          "saturatedFat": 0,
+          "transFat": 0,
+          "natrium": 19.2,
+          "cholesterol": 17.1,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "유산슬",
-        "imgLink": "",
-        "calories": 189,
+        "name": "맛있는 닭가슴살 청양고추 소시지 꼬치 (냉동), 70g, 5개",
+        "imgLink": "https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2022/10/20/18/5/2bdae355-9354-4dcf-8f50-6c869d781090.jpg",
+        "calories": 120,
+        "carbohydrate": 5,
+        "sugar": 2,
+        "protein": 12,
+        "fat": 6,
+        "saturatedFat": 1.7,
+        "transFat": 0,
+        "natrium": 390,
+        "cholesterol": 20,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기",
+          "대두",
+          "밀",
+          "우유",
+          "달걀",
+          "쇠고기",
+          "조개류(굴)"
+        ],
+        "balance": {
+          "carbohydrate": 21.7,
+          "fat": 26.1,
+          "protein": 52.2
+        },
+        "nutritionRatio": {
+          "calories": 4,
+          "carbohydrate": 1.3,
+          "sugar": 3.8,
+          "protein": 8,
+          "fat": 6,
+          "saturatedFat": 7.3,
+          "transFat": 7.3,
+          "natrium": 17,
+          "cholesterol": 6.7,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "허닭 깔끔매콤 청양고추 큐브 닭가슴살 (냉동), 100g, 6개",
+        "imgLink": "https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/product/image/vendoritem/2019/07/24/5011273475/fa2100e6-b2c6-47dd-a7b9-c617b99759fc.jpg",
+        "calories": 190,
+        "carbohydrate": 10,
+        "sugar": 2,
+        "protein": 22,
+        "fat": 7,
+        "saturatedFat": 1.7,
+        "transFat": 0,
+        "natrium": 220,
+        "cholesterol": 55,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기",
+          "소고기",
+          "대두",
+          "밀",
+          "계란",
+          "우유",
+          "고등어"
+        ],
+        "balance": {
+          "carbohydrate": 25.6,
+          "fat": 17.9,
+          "protein": 56.4
+        },
+        "nutritionRatio": {
+          "calories": 6.4,
+          "carbohydrate": 2.7,
+          "sugar": 3.8,
+          "protein": 14.8,
+          "fat": 7,
+          "saturatedFat": 7.3,
+          "transFat": 7.3,
+          "natrium": 9.6,
+          "cholesterol": 18.3,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "잇메이트 닭가슴살 볼 마늘 100g",
+        "imgLink": "https://file.rankingdak.com/image/RANK/PRODUCT/PRD001/20220325/fbe6c1a2ca77fe309b6ad115ff887665_330_330.jpg",
+        "calories": 170,
+        "carbohydrate": 10,
+        "sugar": 6,
+        "protein": 19,
+        "fat": 6,
+        "saturatedFat": 1.8,
+        "transFat": 0,
+        "natrium": 460,
+        "cholesterol": 50,
+        "dietaryFiber": -1,
+        "allergy": [
+          "우유",
+          "대두",
+          "밀",
+          "토마토",
+          "닭고기",
+          "쇠고기"
+        ],
+        "balance": {
+          "carbohydrate": 28.6,
+          "fat": 17.1,
+          "protein": 54.3
+        },
+        "nutritionRatio": {
+          "calories": 5.7,
+          "carbohydrate": 2.7,
+          "sugar": 11.5,
+          "protein": 12.7,
+          "fat": 6,
+          "saturatedFat": 7.8,
+          "transFat": 7.8,
+          "natrium": 20,
+          "cholesterol": 16.7,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "맛있닭 닭가슴살 볼 깻잎맛 100g",
+        "imgLink": "https://file.rankingdak.com/image/RANK/PRODUCT/PRD001/20220325/a05773c03cd37735e50a86ce0c5498b7_330_330.jpg",
+        "calories": 150,
         "carbohydrate": 9,
-        "sugar": 4.7,
-        "protein": 16.6,
-        "fat": 9.7,
-        "saturatedFat": 0.1,
-        "transFat": 1.7,
-        "natrium": 463.88,
-        "allergy": [],
+        "sugar": 8,
+        "protein": 17,
+        "fat": 5,
+        "saturatedFat": 1.1,
+        "transFat": 0,
+        "natrium": 430,
+        "cholesterol": 60,
+        "dietaryFiber": -1,
+        "allergy": [
+          "우유",
+          "대두",
+          "밀",
+          "토마토",
+          "닭고기",
+          "쇠고기"
+        ],
         "balance": {
-          "carbohydrate": 25.5,
-          "fat": 27.5,
-          "protein": 47
+          "carbohydrate": 29,
+          "fat": 16.1,
+          "protein": 54.8
+        },
+        "nutritionRatio": {
+          "calories": 5,
+          "carbohydrate": 2.4,
+          "sugar": 15.3,
+          "protein": 11.4,
+          "fat": 5,
+          "saturatedFat": 4.7,
+          "transFat": 4.7,
+          "natrium": 18.7,
+          "cholesterol": 20,
+          "dietaryFiber": -1
         }
       },
       {
@@ -679,262 +863,392 @@ recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 
         "saturatedFat": 0.1,
         "transFat": 3.2,
         "natrium": 472.37,
+        "cholesterol": 44.22,
+        "dietaryFiber": -1,
         "allergy": [],
         "balance": {
           "carbohydrate": 30.9,
           "fat": 25.7,
           "protein": 43.4
+        },
+        "nutritionRatio": {
+          "calories": 11.1,
+          "carbohydrate": 5.2,
+          "sugar": 30.3,
+          "protein": 18.2,
+          "fat": 16.2,
+          "saturatedFat": 0.4,
+          "transFat": 0.4,
+          "natrium": 20.5,
+          "cholesterol": 14.7,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "버섯조림",
+        "name": "유산슬",
         "imgLink": "",
-        "calories": 91,
-        "carbohydrate": 9.3,
-        "sugar": 2.9,
-        "protein": 6.6,
-        "fat": 3,
+        "calories": 189,
+        "carbohydrate": 9,
+        "sugar": 4.7,
+        "protein": 16.6,
+        "fat": 9.7,
         "saturatedFat": 0.1,
-        "transFat": 2.2,
-        "natrium": 452.58,
+        "transFat": 1.7,
+        "natrium": 463.88,
+        "cholesterol": 66.59,
+        "dietaryFiber": -1,
         "allergy": [],
         "balance": {
-          "carbohydrate": 49.2,
-          "fat": 15.9,
-          "protein": 34.9
+          "carbohydrate": 25.5,
+          "fat": 27.5,
+          "protein": 47
+        },
+        "nutritionRatio": {
+          "calories": 6.3,
+          "carbohydrate": 2.4,
+          "sugar": 9,
+          "protein": 11.1,
+          "fat": 9.8,
+          "saturatedFat": 0.4,
+          "transFat": 0.4,
+          "natrium": 20.2,
+          "cholesterol": 22.2,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "빙그레 tft 더단백 마일드바 아몬드쿠키 9p, 1개, 450g",
-        "imgLink": "https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2022/10/07/11/6/ff67434e-2116-4b0b-a886-09526cf4f15e.png",
-        "calories": 220,
-        "carbohydrate": 22,
-        "sugar": 0.7,
-        "protein": 15,
-        "fat": 8,
-        "saturatedFat": 3,
+        "name": "햇살닭 닭가슴살 큐브 깻잎고추 3kg(100gX30팩)",
+        "imgLink": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/ae69/4f694d41694975c2f97ef94713d38222ff00d103f9eca9c35e4d05db430a.jpg",
+        "calories": 140.4,
+        "carbohydrate": 6.6,
+        "sugar": 3.8,
+        "protein": 18.1,
+        "fat": 4.6,
+        "saturatedFat": 1.4,
         "transFat": 0,
-        "natrium": 170,
+        "natrium": 291.6,
+        "cholesterol": 61.2,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기",
+          "우유",
+          "대두"
+        ],
+        "balance": {
+          "carbohydrate": 22.5,
+          "fat": 15.7,
+          "protein": 61.8
+        },
+        "nutritionRatio": {
+          "calories": 4.7,
+          "carbohydrate": 1.8,
+          "sugar": 7.3,
+          "protein": 12.1,
+          "fat": 4.6,
+          "saturatedFat": 6,
+          "transFat": 6,
+          "natrium": 12.7,
+          "cholesterol": 20.4,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "맛있닭 닭가슴살 햄, 200g, 4개",
+        "imgLink": "https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2020/09/14/21/3/60248143-4fb1-4127-a92e-adf5637e8bca.jpg",
+        "calories": 140,
+        "carbohydrate": 3,
+        "sugar": 1,
+        "protein": 19,
+        "fat": 6,
+        "saturatedFat": 1.9,
+        "transFat": 0,
+        "natrium": 470,
+        "cholesterol": 55,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기"
+        ],
+        "balance": {
+          "carbohydrate": 10.7,
+          "fat": 21.4,
+          "protein": 67.9
+        },
+        "nutritionRatio": {
+          "calories": 4.7,
+          "carbohydrate": 0.8,
+          "sugar": 1.9,
+          "protein": 12.7,
+          "fat": 6,
+          "saturatedFat": 8.2,
+          "transFat": 8.2,
+          "natrium": 20.4,
+          "cholesterol": 18.3,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "아임닭 닭가슴살 큐브 매콤청양 (냉동), 5개, 100g",
+        "imgLink": "https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2022/05/24/14/7/32455d20-9e39-4298-80f5-ced4039d86d6.jpg",
+        "calories": 180,
+        "carbohydrate": 7,
+        "sugar": 2,
+        "protein": 18,
+        "fat": 9,
+        "saturatedFat": 2.4,
+        "transFat": 0,
+        "natrium": 180,
+        "cholesterol": 45,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기",
+          "대두",
+          "밀",
+          "쇠고기",
+          "우유",
+          "토마토"
+        ],
+        "balance": {
+          "carbohydrate": 20.6,
+          "fat": 26.5,
+          "protein": 52.9
+        },
+        "nutritionRatio": {
+          "calories": 6,
+          "carbohydrate": 1.9,
+          "sugar": 3.8,
+          "protein": 12.1,
+          "fat": 9.1,
+          "saturatedFat": 10.3,
+          "transFat": 10.3,
+          "natrium": 7.8,
+          "cholesterol": 15,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "스파이시타코포카챠",
+        "imgLink": "https://cdn.paris.spl.li/wp-content/uploads/211022_PB-타코포카챠-1280-600x600.jpg",
+        "calories": 275,
+        "carbohydrate": 5,
+        "sugar": 5,
+        "protein": 13,
+        "fat": 5,
+        "saturatedFat": 5,
+        "transFat": 0,
+        "natrium": 470,
+        "cholesterol": 0,
+        "dietaryFiber": 0,
+        "allergy": [
+          "밀",
+          "토마토",
+          "대두",
+          "우유",
+          "돼지고기",
+          "쇠고기",
+          "계란",
+          "닭고기"
+        ],
+        "balance": {
+          "carbohydrate": 21.7,
+          "fat": 21.7,
+          "protein": 56.5
+        },
+        "nutritionRatio": {
+          "calories": 9.2,
+          "carbohydrate": 1.3,
+          "sugar": 9.6,
+          "protein": 8.7,
+          "fat": 5,
+          "saturatedFat": 21.6,
+          "transFat": 21.6,
+          "natrium": 20.4,
+          "cholesterol": 0,
+          "dietaryFiber": 0
+        }
+      },
+      {
+        "name": "돼지고기메추리알장조림",
+        "imgLink": "",
+        "calories": 166,
+        "carbohydrate": 4.3,
+        "sugar": 6.2,
+        "protein": 20.1,
+        "fat": 7.7,
+        "saturatedFat": 0,
+        "transFat": 1.5,
+        "natrium": 388.14,
+        "cholesterol": 177.59,
+        "dietaryFiber": -1,
+        "allergy": [],
+        "balance": {
+          "carbohydrate": 13.4,
+          "fat": 24,
+          "protein": 62.6
+        },
+        "nutritionRatio": {
+          "calories": 5.6,
+          "carbohydrate": 1.2,
+          "sugar": 11.9,
+          "protein": 13.5,
+          "fat": 7.7,
+          "saturatedFat": 0,
+          "transFat": 0,
+          "natrium": 16.9,
+          "cholesterol": 59.2,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "맛있닭 한입 소스 닭가슴살 블랙소이 100g",
+        "imgLink": "https://file.rankingdak.com/image/RANK/PRODUCT/PRD001/20221017/IMG1665aCo981020867_330_330.jpg",
+        "calories": 175,
+        "carbohydrate": 8,
+        "sugar": 8,
+        "protein": 16,
+        "fat": 9,
+        "saturatedFat": 1.3,
+        "transFat": 0,
+        "natrium": 180,
+        "cholesterol": 60,
+        "dietaryFiber": -1,
         "allergy": [
           "우유",
+          "대두",
+          "밀",
+          "닭고기"
+        ],
+        "balance": {
+          "carbohydrate": 24.2,
+          "fat": 27.3,
+          "protein": 48.5
+        },
+        "nutritionRatio": {
+          "calories": 5.9,
+          "carbohydrate": 2.1,
+          "sugar": 15.3,
+          "protein": 10.7,
+          "fat": 9.1,
+          "saturatedFat": 5.6,
+          "transFat": 5.6,
+          "natrium": 7.8,
+          "cholesterol": 20,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "하림이닭 닭가슴살 Real 바 갈릭 (냉동), 80g, 10개",
+        "imgLink": "https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2023/02/21/12/0/6a948394-f046-43b5-acdb-b75207c70c2b.jpg",
+        "calories": 115,
+        "carbohydrate": 3,
+        "sugar": 1,
+        "protein": 15,
+        "fat": 5,
+        "saturatedFat": 1.8,
+        "transFat": 0,
+        "natrium": 440,
+        "cholesterol": 35,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기",
+          "대두",
+          "우유",
+          "이산화황"
+        ],
+        "balance": {
+          "carbohydrate": 13,
+          "fat": 21.7,
+          "protein": 65.2
+        },
+        "nutritionRatio": {
+          "calories": 3.9,
+          "carbohydrate": 0.8,
+          "sugar": 1.9,
+          "protein": 10.1,
+          "fat": 5,
+          "saturatedFat": 7.8,
+          "transFat": 7.8,
+          "natrium": 19.1,
+          "cholesterol": 11.7,
+          "dietaryFiber": -1
+        }
+      },
+      {
+        "name": "허닭 닭가슴살 큐브 불고기맛 (냉동), 100g, 6팩",
+        "imgLink": "https://thumbnail7.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2023/02/23/15/4/060e3c27-d753-4174-8a22-69d03a12e52d.jpg",
+        "calories": 180,
+        "carbohydrate": 8,
+        "sugar": 1,
+        "protein": 21,
+        "fat": 7,
+        "saturatedFat": 2,
+        "transFat": 0,
+        "natrium": 210,
+        "cholesterol": 65,
+        "dietaryFiber": -1,
+        "allergy": [
+          "닭고기",
+          "소고기",
           "대두",
           "밀"
         ],
         "balance": {
-          "carbohydrate": 48.9,
-          "fat": 17.8,
-          "protein": 33.3
-        }
-      },
-      {
-        "name": "대상웰라이프 마이밀 뉴프로틴 딥초코, 30p, 190ml",
-        "imgLink": "https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/5230369718431063-4274919b-a5cd-49d2-a0c9-c5a24d6b0825.jpg",
-        "calories": 150,
-        "carbohydrate": 15,
-        "sugar": 8,
-        "protein": 9,
-        "fat": 6,
-        "saturatedFat": 1,
-        "transFat": 0,
-        "natrium": 150,
-        "allergy": [
-          "우유",
-          "대두"
-        ],
-        "balance": {
-          "carbohydrate": 50,
-          "fat": 20,
-          "protein": 30
-        }
-      },
-      {
-        "name": "대상웰라이프 마이밀 뉴프로틴 오리지널, 190ml, 30개",
-        "imgLink": "https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/4277292443701791-480ec440-6f8a-4ee7-afff-029ad4287085.jpg",
-        "calories": 150,
-        "carbohydrate": 15,
-        "sugar": 10,
-        "protein": 9,
-        "fat": 6,
-        "saturatedFat": 1,
-        "transFat": 0,
-        "natrium": 150,
-        "allergy": [
-          "대두",
-          "우유",
-          "땅콩",
-          "호두",
-          "잣"
-        ],
-        "balance": {
-          "carbohydrate": 50,
-          "fat": 20,
-          "protein": 30
-        }
-      },
-      {
-        "name": "베리오트리코타&치킨샐러드",
-        "imgLink": "https://cdn.paris.spl.li/wp-content/uploads/2023/03/베리오트-리코타치킨샐러드_정방형-600x600.jpg",
-        "calories": 170,
-        "carbohydrate": 6,
-        "sugar": 6,
-        "protein": 11,
-        "fat": 2.8,
-        "saturatedFat": 2.8,
-        "transFat": 0,
-        "natrium": 250,
-        "allergy": [
-          "우유",
-          "토마토",
-          "계란",
-          "대두",
-          "닭고기"
-        ],
-        "balance": {
-          "carbohydrate": 30.3,
-          "fat": 14.1,
-          "protein": 55.6
-        }
-      },
-      {
-        "name": "잇메이트 저염 스팀 닭가슴살 오리지널 100g",
-        "imgLink": "https://file.rankingdak.com/image/RANK/PRODUCT/PRD001/20220325/4acc6d30867ae4fdd77fdf665c1d41f8_330_330.jpg",
-        "calories": 155,
-        "carbohydrate": 5,
-        "sugar": 5,
-        "protein": 20,
-        "fat": 6,
-        "saturatedFat": 1,
-        "transFat": 0,
-        "natrium": 80,
-        "allergy": [
-          "우유",
-          "대두",
-          "닭고기"
-        ],
-        "balance": {
-          "carbohydrate": 16.1,
+          "carbohydrate": 22.2,
           "fat": 19.4,
-          "protein": 64.5
+          "protein": 58.3
+        },
+        "nutritionRatio": {
+          "calories": 6,
+          "carbohydrate": 2.1,
+          "sugar": 1.9,
+          "protein": 14.1,
+          "fat": 7,
+          "saturatedFat": 8.6,
+          "transFat": 8.6,
+          "natrium": 9.1,
+          "cholesterol": 21.7,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "베노프 20바 인절미 프로틴바 12p, 708g, 1개",
-        "imgLink": "https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/rs_quotation_api/bc44ts45/65d1f44bb07242dfb1121a732fc693c6.jpg",
-        "calories": 199,
-        "carbohydrate": 23,
-        "sugar": 4.2,
-        "protein": 20,
-        "fat": 6,
-        "saturatedFat": 0.9,
-        "transFat": 0,
-        "natrium": 199,
-        "allergy": [
-          "대두",
-          "우유",
-          "난류"
-        ],
-        "balance": {
-          "carbohydrate": 46.9,
-          "fat": 12.2,
-          "protein": 40.8
-        }
-      },
-      {
-        "name": "쉬림프 코코넛 샐러드 밀 박스",
-        "imgLink": "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9300000002304]_20210421171643703.jpg",
-        "calories": 147,
-        "carbohydrate": 10,
-        "sugar": 5,
-        "protein": 11,
+        "name": "잇메이트 닭가슴살 소시지 고추맛 100g",
+        "imgLink": "https://file.rankingdak.com/image/RANK/PRODUCT/PRD001/20220325/d90b99f392d9042d72530bbe3895e89f_330_330.jpg",
+        "calories": 145,
+        "carbohydrate": 5,
+        "sugar": 2,
+        "protein": 15,
         "fat": 7,
-        "saturatedFat": 5,
+        "saturatedFat": 2,
         "transFat": 0,
-        "natrium": 330,
-        "allergy": [
-          "대두",
-          "우유",
-          "알류",
-          "토마토",
-          "새우"
-        ],
-        "balance": {
-          "carbohydrate": 35.7,
-          "fat": 25,
-          "protein": 39.3
-        }
-      },
-      {
-        "name": "맛있닭 닭가슴살 스테이크 오리지널 100g",
-        "imgLink": "https://file.rankingdak.com/image/RANK/PRODUCT/PRD001/20220510/IMG1652kJD147903763_330_330.jpg",
-        "calories": 165,
-        "carbohydrate": 8,
-        "sugar": 6,
-        "protein": 20,
-        "fat": 6,
-        "saturatedFat": 1,
-        "transFat": 0,
-        "natrium": 390,
+        "natrium": 480,
+        "cholesterol": 60,
+        "dietaryFiber": -1,
         "allergy": [
           "우유",
           "대두",
-          "밀",
-          "토마토",
           "닭고기",
           "쇠고기"
         ],
         "balance": {
-          "carbohydrate": 23.5,
-          "fat": 17.6,
-          "protein": 58.8
+          "carbohydrate": 18.5,
+          "fat": 25.9,
+          "protein": 55.6
+        },
+        "nutritionRatio": {
+          "calories": 4.9,
+          "carbohydrate": 1.3,
+          "sugar": 3.8,
+          "protein": 10.1,
+          "fat": 7,
+          "saturatedFat": 8.6,
+          "transFat": 8.6,
+          "natrium": 20.9,
+          "cholesterol": 20,
+          "dietaryFiber": -1
         }
       },
       {
-        "name": "프로틴방앗간 블론디오트 하루 단백바, 1개, 45g",
-        "imgLink": "https://thumbnail7.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2023/01/05/12/1/d1916d21-98f6-484b-8095-f31e2ef6bb3b.jpg",
-        "calories": 142.6,
-        "carbohydrate": 18,
-        "sugar": 3,
-        "protein": 12,
-        "fat": 8,
-        "saturatedFat": 1.7,
-        "transFat": 0,
-        "natrium": 70,
-        "allergy": [
-          "대두",
-          "우유",
-          "땅콩"
-        ],
-        "balance": {
-          "carbohydrate": 47.4,
-          "fat": 21.1,
-          "protein": 31.6
-        }
-      },
-      {
-        "name": "myprotein 마이프로틴 단백질 초콜릿 와퍼 42g 10개 Protein Wafer Chocolate",
-        "imgLink": "https://thumbnail9.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/4ba7/6538d714703be6f678ba1f5485a64e63574be8992a4addf4880476ddb525.jpg",
-        "calories": 195,
-        "carbohydrate": 13,
-        "sugar": 5.5,
-        "protein": 15,
-        "fat": 9,
-        "saturatedFat": 6,
-        "transFat": 0,
-        "natrium": 210,
-        "allergy": [
-          "우유",
-          "밀",
-          "대두"
-        ],
-        "balance": {
-          "carbohydrate": 35.1,
-          "fat": 24.3,
-          "protein": 40.5
-        }
-      },
-      {
-        "name": "하림)닭가슴바오리지널80g",
-        "imgLink": "https://tqklhszfkvzk6518638.cdn.ntruss.com/product/8801492375384.jpg",
+        "name": "하림 리얼바 닭가슴살 오리지널, 80g, 6개",
+        "imgLink": "https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/417917959758271-81073506-b82d-4167-9a79-035e59755322.jpg",
         "calories": 120,
         "carbohydrate": 3,
         "sugar": 1,
@@ -943,6 +1257,8 @@ recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 
         "saturatedFat": 1.8,
         "transFat": 0,
         "natrium": 470,
+        "cholesterol": 60,
+        "dietaryFiber": -1,
         "allergy": [
           "닭고기",
           "대두",
@@ -952,27 +1268,18 @@ recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 
           "carbohydrate": 13.2,
           "fat": 21.1,
           "protein": 65.8
-        }
-      },
-      {
-        "name": "이지푸드 [이지푸드] 한끼뚝닭 리얼 닭가슴살 쉐이크 혼합(16팩)(고소 새콤), 단일선택, 단일선택",
-        "imgLink": "https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/24b3/a77214346ca91bb92915fcfe972a06f622281782cde227091b84d1a1c620.jpg",
-        "calories": 200,
-        "carbohydrate": 9.8,
-        "sugar": 8.9,
-        "protein": 23.5,
-        "fat": 7.5,
-        "saturatedFat": 1.2,
-        "transFat": 0,
-        "natrium": 137,
-        "allergy": [
-          "닭고기",
-          "호두"
-        ],
-        "balance": {
-          "carbohydrate": 24,
-          "fat": 18.4,
-          "protein": 57.6
+        },
+        "nutritionRatio": {
+          "calories": 4,
+          "carbohydrate": 0.8,
+          "sugar": 1.9,
+          "protein": 10.1,
+          "fat": 4.8,
+          "saturatedFat": 7.8,
+          "transFat": 7.8,
+          "natrium": 20.4,
+          "cholesterol": 20,
+          "dietaryFiber": -1
         }
       }
     ]
