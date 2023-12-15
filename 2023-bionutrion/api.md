@@ -552,7 +552,7 @@ data 변수
 bodyInfo|EER 계산값
 recomms|추천결과 리스트(식품명, 영양정보, 알레르기, 밸런스 등)
 
-recomms 안의 nutritionRation : 일일 권장섭취량에 대한 영양소 비율
+recomms 안의 nutritionRatio : 일일 권장섭취량에 대한 영양소 비율
 
 ~~~
 {
