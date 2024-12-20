@@ -29,19 +29,75 @@ You will then be redirected to the login page. Use the email you signed up with 
 
 ![img](./pics/login.png)
 
-After logging in, you will see our sample admin page.
+After the initial setup, you might not see any data right away. Don't be discouraged! Once the UI setup is complete and your customers start clicking and making purchases, you'll begin to see the results.
 
-![img](./pics/sample.png)
+![img](./pics/firstdash.png)
 
 After a few minutes, you will receive a "setup done" message.
 
 ![img](./pics/setupdone.png)
 
-## Setup UI
+## Adding Custom Liquid Code
 After installation, navigate to your theme editor.
 ![img](./pics/custom.png)
 
-We provide recommendations for three pages: home, product, and cart.
+
+To start, you need to add a custom liquid code first.
+
+1. Click the "..." button at the top.
+2. Then, select "Edit Code."
+
+![img](./pics/editcode.png)
+
+Then, a new tab will open.
+
+1. Select "Sections."
+2. Choose "Add a new section."
+
+![img](./pics/editcode2.png)
+
+Next, select "Liquid" and name it "farmkit-recomm.
+![img](./pics/liquid.png)
+
+An editor will then appear. Remove all the contents and paste the following code.
+
+~~~
+ 
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+ 
+
+
+{% schema %}
+{
+  "name": "farmkit-recomm",
+  "tag": "section",
+  "class": "section",  
+  "presets": [
+    {
+      "name": "farmkit-recomm"
+    }
+  ]
+}
+{% endschema %}
+~~~
+
+Your liquid editor should then look like the following.
+![img](./pics/liquid_edit.png)
+
+
+## Setup UI
+
+Now, you're ready to add our recommendation blocks to your pages.
+
+We provide recommendations for three pages: Home, Product, and Cart.
 
 First, go to your home page editor.
 ![img](./pics/home.png)
