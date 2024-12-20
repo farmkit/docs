@@ -15,6 +15,7 @@ Once the installation is successful, you will be redirected to the sign-up page.
 ![img](./pics/email_sub.png)
 
 After entering your email address, you will receive a message with your OTP.
+
 ![img](./pics/otp.png)
 
 Please enter the OTP and click the submit button.
@@ -33,12 +34,17 @@ After the initial setup, you might not see any data right away. Don't be discour
 
 ![img](./pics/firstdash.png)
 
+After UI is set up and user statistics are accumulated, then you can see following such statistics.
+
+![img](./pics/afterstat.png)
+
 After a few minutes, you will receive a "setup done" message.
 
 ![img](./pics/setupdone.png)
 
 ## Adding Custom Liquid Code
 After installation, navigate to your theme editor.
+
 ![img](./pics/custom.png)
 
 
@@ -57,6 +63,7 @@ Then, a new tab will open.
 ![img](./pics/editcode2.png)
 
 Next, select "Liquid" and name it "farmkit-recomm.
+
 ![img](./pics/liquid.png)
 
 An editor will then appear. Remove all the contents and paste the following code.
@@ -100,6 +107,7 @@ Now, you're ready to add our recommendation blocks to your pages.
 We provide recommendations for three pages: Home, Product, and Cart.
 
 First, go to your home page editor.
+
 ![img](./pics/home.png)
 
 Add the `farmkit-recomm` section for a pre-defined design.
