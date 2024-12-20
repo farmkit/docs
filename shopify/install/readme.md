@@ -34,7 +34,7 @@ After the initial setup, you might not see any data right away. Don't be discour
 
 ![img](./pics/firstdash.png)
 
-After UI is set up and user statistics are accumulated, then you can see following such statistics.
+Once the UI is set up and user statistics are accumulated, you will be able to see the following statistics.
 
 ![img](./pics/afterstat.png)
 
