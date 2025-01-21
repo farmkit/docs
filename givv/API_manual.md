@@ -65,6 +65,11 @@ Request URL
 https://recomm-givv-atms.bitdle.kr/givv/log-event
 ~~~
 
+Request Header
+|번호|헤더|설명|
+|------|---|---|
+|1|X-API-KEY|키 값은 추후 지정 예정(임시값: 1)|
+
 
 Request Body
 |번호|내용|설명|
@@ -78,6 +83,7 @@ Request Body
 curl -X 'POST' \
   'https://recomm-givv-atms.bitdle.kr/givv/log-event' \
   -H 'accept: */*' \
+  -H 'X-API-KEY: 1' \
   -H 'Content-Type: application/json' \
   -d '{
   "userId": 2,
