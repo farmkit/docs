@@ -34,7 +34,7 @@ curl -X 'POST' \
   -H 'X-API-KEY: 1' \
   -H 'Content-Type: application/json' \
   -d '{
-  "userId": 1
+  "UserId": 51
 }'
 ```
 
@@ -43,15 +43,16 @@ Response
 postId 리스트 전달
 ~~~
 {
-  "errcode": 200000,
-  "data": [
-    6,
-    7,
-    4,
-    3,
-    2,
-    1
-  ]
+    "errcode": 200000,
+    "data": [
+        2,
+        1,
+        3,
+        5,
+        4,
+        6,
+        7
+    ]
 }
 ~~~
 
