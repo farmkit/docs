@@ -2,12 +2,12 @@
 # API Usage Guide (Sample)
 This is a description of how to use the recommendation API.
 
-Base EndPoint URL:
-~~~
-https://xxx.bitdle.kr/
-~~~
+Generally, we provide our own REST API and integrate with clients through the API endpoints. Typically, we communicate with the client's server and use the HTTPS protocol and X-API-KEY for security
 
-## 1. Post Recommendation API
+Here's a typical example of the API we provide:
+
+
+## 1. Recommendation API
 Returns a list of recommended posts for each user.
 
 Request URL
@@ -55,7 +55,9 @@ Returns a list of product IDs
 ~~~
 
 ## 2. Event Log
-Collects user event logs.
+It collects user event logs such as clicks, adding items to the cart, or purchases.
+
+If you want to collect more data (e.g., the amount of purchases), additional fields can be added for customization.
 
 Request URL
 ~~~
