@@ -27,7 +27,7 @@ Request Body
 
 ```
 curl -X 'POST' \
-  'https://recomm-givv-atms.bitdle.kr/givv/recomm-post' \
+  'https://xxx.bitdle.kr/xxx/recomm-post' \
   -H 'accept: */*' \
   -H 'X-API-KEY: 1' \
   -H 'Content-Type: application/json' \
@@ -78,7 +78,7 @@ Request Body
 
 ```
 curl -X 'POST' \
-  'https://recomm-givv-atms.bitdle.kr/givv/log-event' \
+  'https://xxx.bitdle.kr/xxx/log-event' \
   -H 'accept: */*' \
   -H 'X-API-KEY: 1' \
   -H 'Content-Type: application/json' \
