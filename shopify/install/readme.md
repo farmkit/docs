@@ -31,6 +31,7 @@ You will then be redirected to the login page. Use the email you signed up with 
 ![img](./pics/login.png)
 
 After the initial setup, you might not see any data right away. Don't be discouraged! Once the UI setup is complete and your customers start clicking and making purchases, you'll begin to see the results.
+It may take anywhere around 2-3 hours up to a day for the data to be reflected on the dashboard.
 
 ![img](./pics/firstdash.png)
 
